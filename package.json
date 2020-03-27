@@ -1,6 +1,6 @@
 {
   "name": "react-trix-rte",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React wrapper for Trix rich text editor created by Basecamp",
   "main": "./index.js",
   "peerDependencies": {
