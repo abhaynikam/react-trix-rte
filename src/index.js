@@ -1,3 +1,3 @@
-import MyComponent from './components';
+import ReactTrixRTEInput from "./components/ReactTrixRTEInput";
 
-export default MyComponent;
+export { ReactTrixRTEInput };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MyComponent from '../src/index';
+import { ReactTrixRTEInput } from '../src/index';
 
 class Example extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Example extends React.Component {
   render() {
     return (
       <div>
-        <MyComponent name='Jack'/>
+        <ReactTrixRTEInput name='Jack'/>
       </div>
     );
   }
