@@ -1,8 +1,8 @@
 var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
@@ -11,25 +11,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components|build)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['@babel/preset-env'],
           }
         }
       }, {
         test: /\.*css$/,
-        use : ExtractTextPlugin.extract({
-            fallback : 'style-loader',
-            use : [
-                'css-loader',
-                'sass-loader'
-            ]
-        })
-       },
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ]
   },
   externals: {
