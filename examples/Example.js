@@ -1,18 +1,17 @@
 import React from 'react';
 
-import { ReactTrixRTEInput } from '../src/index';
+import { ReactTrixRTEInput, ClassicRTEToolbar } from '../src/index';
 
 class Example extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {}
-
   render() {
     return (
       <div>
-        <ReactTrixRTEInput name='Jack'/>
+        <ClassicRTEToolbar toolbarId="rich-text-toolbar" />
+        <ReactTrixRTEInput toolbarId="rich-text-toolbar" />
       </div>
     );
   }
