@@ -7,4 +7,9 @@ describe('ReactTrixRTEInput', () => {
     const wrapper = shallow(<ReactTrixRTEInput />);
     expect(wrapper).toHaveLength(1);
   });
+
+  it('renders with toolbarId', () => {
+    const wrapper = shallow(<ReactTrixRTEInput toolbarId="react-trix-rte-editor" />);
+    expect(wrapper.instance().props.toolbarId).toEqual("react-trix-rte-editor");
+  });
 });
