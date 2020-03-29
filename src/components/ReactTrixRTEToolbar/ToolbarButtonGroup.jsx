@@ -1,6 +1,6 @@
 import React from "react";
 
-import ToolbarButton from "./ToolbarButton";
+import ToolbarButton from "./Shared/ToolbarButton";
 import { mapIndexed } from "../Shared/utils";
 import { TOOLBAR_ACTION_GROUP_OPTS } from "./constants";
 
