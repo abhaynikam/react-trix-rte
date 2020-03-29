@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactTrixRTEInput, ClassicRTEToolbar } from '../src/index';
+import { ReactTrixRTEInput, StandardRTEToolbar } from '../src/index';
 
 class Example extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Example extends React.Component {
   render() {
     return (
       <div>
-        <ClassicRTEToolbar toolbarId="rich-text-toolbar" />
+        <StandardRTEToolbar toolbarId="rich-text-toolbar" />
         <ReactTrixRTEInput toolbarId="rich-text-toolbar" />
       </div>
     );
