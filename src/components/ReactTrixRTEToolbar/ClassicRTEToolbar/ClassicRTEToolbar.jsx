@@ -15,7 +15,8 @@ export default function ClassicRTEToolbar(props) {
 
     R.mapObjIndexed((toolbarActionOptions, key) => {
       if(key == "history-tools") {
-        groupedToolbarActionHTML.push(<ToolbarSpacer />);
+        const dateTimestamp = new Date().getTime();
+        groupedToolbarActionHTML.push(<ToolbarSpacer key={dateTimestamp}/>);
       }
 
       groupedToolbarActionHTML.push(
