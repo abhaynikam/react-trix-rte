@@ -3,7 +3,7 @@ import * as R from "ramda";
 import PropTypes from 'prop-types';
 
 import ToolbarButtonGroup from "../ToolbarButtonGroup";
-import ToolbarSpacer from "../ToolbarSpacer";
+import ToolbarSpacer from "../Shared/ToolbarSpacer";
 import { groupBy } from "../../Shared/utils";
 import { TOOLBAR_ACTION_OPTS } from "../constants";
 
