@@ -6,7 +6,6 @@ import { TOOLBAR_ACTION_GROUP_OPTS } from "./constants";
 
 export default function ToolbarButtonGroup(props) {
   const { groupName, toolbarActionOptions } = props;
-  console.log(toolbarActionOptions)
 
   function renderToolbarActions() {
     return mapIndexed((toolbarActionOption, index) => (
