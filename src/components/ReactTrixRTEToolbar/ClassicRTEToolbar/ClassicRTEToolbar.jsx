@@ -1,12 +1,13 @@
-import * as R from "ramda";
 import React from "react";
+import * as R from "ramda";
+import PropTypes from 'prop-types';
 
 import ToolbarButtonGroup from "../ToolbarButtonGroup";
 import ToolbarSpacer from "../ToolbarSpacer";
 import { groupBy } from "../../Shared/utils";
 import { TOOLBAR_ACTION_OPTS } from "../constants";
 
-export default function ClassicRTEToolbar(props) {
+function ClassicRTEToolbar(props) {
   const { allowGroupingAction = true, toolbarId } = props;
 
   function renderGroupedToolbarActions() {
@@ -46,3 +47,10 @@ export default function ClassicRTEToolbar(props) {
     </trix-toolbar>
   );
 }
+
+ClassicRTEToolbar.propTypes = {
+  allowGroupingAction: PropTypes.bool,
+  toolbarId: PropTypes.string
+}
+
+export default ClassicRTEToolbar;
