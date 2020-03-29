@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 
 import ToolbarSpacer from "../Shared/ToolbarSpacer";
 import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
-import { groupBy } from "../../Shared/utils";
+import ToolbarButton from "../Shared/ToolbarButton";
+import { groupBy, mapIndexed } from "../../Shared/utils";
 import { TOOLBAR_ACTION_OPTS } from "../constants";
 import { SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ClassicRTEToolbar(props) {
-  const { allowGroupingAction = true, toolbarId } = props;
+  const { disableGroupingAction = false, toolbarId } = props;
 
   function renderGroupedToolbarActions() {
     const groupedToolbarActionOptions = groupBy(TOOLBAR_ACTION_OPTS, "trixButtonGroup");
-    let groupedToolbarActionHTML = []
+    let groupedToolbarActionHTML = [];
 
     R.mapObjIndexed((toolbarActionOptions, key) => {
       if(R.equals(key, SPACER_BEFORE_TOOL_GROUP)) {
@@ -29,12 +30,23 @@ function ClassicRTEToolbar(props) {
         />
       );
     })(groupedToolbarActionOptions);
+
     return groupedToolbarActionHTML;
   }
 
+  function renderUnGroupedToolbarActions() {
+    return mapIndexed((toolbarActionKey, index) => {
+      return <ToolbarButton key={index} {...TOOLBAR_ACTION_OPTS[toolbarActionKey]} />
+    })(R.keys(TOOLBAR_ACTION_OPTS));
+  }
+
   function renderToolbarActions() {
-    if(allowGroupingAction) {
-      return renderGroupedToolbarActions();
+    if(disableGroupingAction) {
+      return(
+        <span className="trix-button-group">
+          {renderUnGroupedToolbarActions()}
+        </span>
+      );
     } else {
       return renderGroupedToolbarActions();
     }
@@ -50,7 +62,7 @@ function ClassicRTEToolbar(props) {
 }
 
 ClassicRTEToolbar.propTypes = {
-  allowGroupingAction: PropTypes.bool,
+  disableGroupingAction: PropTypes.bool,
   toolbarId: PropTypes.string
 }
 
