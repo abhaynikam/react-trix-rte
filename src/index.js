@@ -3,5 +3,5 @@ import ClassicRTEToolbar from "./components/ReactTrixRTEToolbar/ClassicRTEToolba
 
 export {
   ReactTrixRTEInput,
-  ClassicRTEToolbar
+  ClassicRTEToolbar,
 };
