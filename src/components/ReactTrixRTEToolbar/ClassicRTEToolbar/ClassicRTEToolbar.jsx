@@ -6,6 +6,7 @@ import ToolbarSpacer from "../Shared/ToolbarSpacer";
 import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
 import { groupBy } from "../../Shared/utils";
 import { TOOLBAR_ACTION_OPTS } from "../constants";
+import { SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ClassicRTEToolbar(props) {
   const { allowGroupingAction = true, toolbarId } = props;
@@ -15,7 +16,7 @@ function ClassicRTEToolbar(props) {
     let groupedToolbarActionHTML = []
 
     R.mapObjIndexed((toolbarActionOptions, key) => {
-      if(key == "history-tools") {
+      if(R.equals(key, SPACER_BEFORE_TOOL_GROUP)) {
         const dateTimestamp = new Date().getTime();
         groupedToolbarActionHTML.push(<ToolbarSpacer key={dateTimestamp}/>);
       }
