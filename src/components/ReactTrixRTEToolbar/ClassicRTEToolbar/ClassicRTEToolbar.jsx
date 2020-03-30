@@ -2,9 +2,10 @@ import React from "react";
 import * as R from "ramda";
 import PropTypes from 'prop-types';
 
-import ToolbarSpacer from "../Shared/ToolbarSpacer";
-import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
 import ToolbarButton from "../Shared/ToolbarButton";
+import ToolbarSpacer from "../Shared/ToolbarSpacer";
+import ToolbarLinkDialog from "../Shared/ToolbarLinkDialog";
+import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
 import { groupBy, mapIndexed } from "../../Shared/utils";
 import { TOOLBAR_ACTION_OPTS } from "../constants";
 import { SPACER_BEFORE_TOOL_GROUP } from "./constants";
@@ -53,10 +54,11 @@ function ClassicRTEToolbar(props) {
   }
 
   return (
-    <trix-toolbar>
-      <div className="trix-button-row" id={toolbarId}>
+    <trix-toolbar id={toolbarId}>
+      <div className="trix-button-row">
         {renderToolbarActions()}
       </div>
+      <ToolbarLinkDialog />
     </trix-toolbar>
   );
 }

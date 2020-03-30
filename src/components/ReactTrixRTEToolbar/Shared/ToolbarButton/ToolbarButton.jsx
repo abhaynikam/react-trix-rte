@@ -9,18 +9,18 @@ function ToolbarButton(props) {
   let dataAttributeOptions = {};
   if(data) {
     const { trixAttribute, trixKey, trixAction } = data;
-    if(trixAttribute) dataAttributeOptions["data-trix-key"] = trixKey;
     if(trixAttribute) dataAttributeOptions["data-trix-attribute"] = trixAttribute;
     if(trixAction) dataAttributeOptions["data-trix-action"] = trixAction;
+    if(trixAttribute) dataAttributeOptions["data-trix-key"] = trixKey;
   }
 
   return (
     <button
       type={type}
+      {...dataAttributeOptions}
       tabIndex={tabIndex}
       className={classNames}
       title={TOOLBAR_LANGUAGE_OPTS[languageKey]}
-      {...dataAttributeOptions}
     >
       {TOOLBAR_LANGUAGE_OPTS[languageKey]}
     </button>

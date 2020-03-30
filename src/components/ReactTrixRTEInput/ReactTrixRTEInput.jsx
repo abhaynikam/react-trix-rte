@@ -11,14 +11,15 @@ function ReactTrixRTEInput(props) {
     onBlur,
     onFocus,
     onChange,
+    onInitialize,
     onFileAccepted,
     onAttachmentAdd,
     onAttachmentRemove,
     onSelectionChange,
-    onInitialize,
     onBeforeInitialize,
+    trixInputRef
   } = props;
-  const trixRTEInputRef = useRef();
+  const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
   const uniqueDateTimestamp = new Date().getTime();
   const trixRTEInputId = `react-trix-rte-input-${uniqueDateTimestamp}`;
@@ -85,6 +86,7 @@ ReactTrixRTEInput.propTypes = {
   onSelectionChange: PropTypes.func,
   onInitialize: PropTypes.func,
   onBeforeInitialize: PropTypes.func,
+  trixInputRef: PropTypes.func,
 };
 
 export default ReactTrixRTEInput;
