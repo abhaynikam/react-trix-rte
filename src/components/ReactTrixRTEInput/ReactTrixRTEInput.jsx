@@ -1,31 +1,57 @@
 import Trix from "trix";
 import PropTypes from 'prop-types';
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useRef, useEffect } from "react";
 
 import './ReactTrixRTEInput.style';
 
 function ReactTrixRTEInput(props) {
-  const { toolbarId } = props;
+  const {
+    defaultValue = "",
+    onChange,
+    toolbarId,
+  } = props;
+  const [value, setValue] = useState(defaultValue);
   const uniqueDateTimestamp = new Date().getTime();
-  const editorId = `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const trixRTEInputId = `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const trixRTEInputRef = useRef();
+
+  useEffect(() => {
+    trixRTEInputRef.current.addEventListener("trix-change", handleChange);
+
+    return () => {
+      trixRTEInputRef.current.removeEventListener("trix-change", handleChange);
+    };
+  }, [])
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setValue(newValue);
+    if(onChange) {
+      onChange(event, newValue);
+    }
+  }
 
   return (
     <Fragment>
       <input
-        id={editorId}
+        id={trixRTEInputId}
+        value={value}
         type="hidden"
         name="content"
       />
       <trix-editor
-        input={editorId}
         toolbar={toolbarId}
+        ref={trixRTEInputRef}
+        input={trixRTEInputId}
       />
     </Fragment>
   );
 }
 
 ReactTrixRTEInput.propTypes = {
-  toolbarId: PropTypes.string
+  toolbarId: PropTypes.string,
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 export default ReactTrixRTEInput;

@@ -4,7 +4,8 @@
   "description": "React wrapper for Trix rich text editor created by Basecamp",
   "main": "./index.js",
   "peerDependencies": {
-    "react": "^16.13.1"
+    "react": "^16.13.1",
+    "trix": "^1.2.3"
   },
   "scripts": {
     "build": "webpack --config webpack.config.babel.js",
@@ -34,8 +35,7 @@
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "trix": "^1.2.3",
-    "webpack": "^4.42.1"
+    "trix": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -55,19 +55,18 @@
     "jest-cli": "^23.6.0",
     "node-sass": "^4.7.2",
     "prop-types": "^15.6.0",
-    "react": "^16.6.0",
-    "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^16.6.0",
     "react-hot-loader": "next",
     "react-test-renderer": "^16.0.0",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.4"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
+    "babel-core": "7.0.0-bridge.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
