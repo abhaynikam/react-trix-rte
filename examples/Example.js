@@ -8,14 +8,23 @@ class Example extends React.Component {
   }
 
   handleChange(e, newValue) {
-    alert(newValue)
+    console.log(newValue);
+  }
+
+  handleFocus(event) {
+    console.log("On Focus..");
   }
 
   render() {
     return (
       <div>
         <StandardRTEToolbar toolbarId="rich-text-toolbar" />
-        <ReactTrixRTEInput toolbarId="rich-text-toolbar" defaultValue="<p>Hello</p>" onChange={this.handleChange}/>
+        <ReactTrixRTEInput
+          toolbarId="rich-text-toolbar"
+          defaultValue="<p>Hello</p>"
+          onChange={this.handleChange}
+          onFocus={this.handleFocus}
+        />
       </div>
     );
   }

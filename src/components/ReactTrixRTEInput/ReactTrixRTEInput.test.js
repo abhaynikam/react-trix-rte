@@ -12,4 +12,9 @@ describe('ReactTrixRTEInput', () => {
     const wrapper = shallow(<ReactTrixRTEInput toolbarId="react-trix-rte-editor" />);
     expect(wrapper.find('trix-editor').props().toolbar).toEqual("react-trix-rte-editor");
   });
+
+  it('renders with default value', () => {
+    const wrapper = shallow(<ReactTrixRTEInput defaultValue="<p>React Trix RTE</p>" />);
+    expect(wrapper.find('input').props().value).toEqual("<p>React Trix RTE</p>");
+  });
 });
