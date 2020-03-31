@@ -2,15 +2,14 @@ import React from "react";
 import * as R from "ramda";
 import PropTypes from 'prop-types';
 
-import ToolbarButton from "../Shared/ToolbarButton";
-import ToolbarSpacer from "../Shared/ToolbarSpacer";
-import ToolbarLinkDialog from "../Shared/ToolbarLinkDialog";
-import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
-import { groupBy, mapIndexed } from "../../Shared/utils";
-import { TOOLBAR_ACTION_OPTS } from "../constants";
-import { SPACER_BEFORE_TOOL_GROUP } from "./constants";
+import ToolbarButton from "./ToolbarComponent/ToolbarButton";
+import ToolbarSpacer from "./ToolbarComponent/ToolbarSpacer";
+import ToolbarLinkDialog from "./ToolbarComponent/ToolbarLinkDialog";
+import ToolbarButtonGroup from "./ToolbarComponent/ToolbarButtonGroup";
+import { groupBy, mapIndexed } from "../Shared/utils";
+import { TOOLBAR_ACTION_OPTS, SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
-function ClassicRTEToolbar(props) {
+function ReactTrixRTEToolbar(props) {
   const { disableGroupingAction = false, toolbarId } = props;
 
   function renderGroupedToolbarActions() {
@@ -63,9 +62,9 @@ function ClassicRTEToolbar(props) {
   );
 }
 
-ClassicRTEToolbar.propTypes = {
+ReactTrixRTEToolbar.propTypes = {
   disableGroupingAction: PropTypes.bool,
   toolbarId: PropTypes.string
 }
 
-export default ClassicRTEToolbar;
+export default ReactTrixRTEToolbar;

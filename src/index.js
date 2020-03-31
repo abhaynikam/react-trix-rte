@@ -1,9 +1,7 @@
 import ReactTrixRTEInput from "./components/ReactTrixRTEInput";
-import ClassicRTEToolbar from "./components/ReactTrixRTEToolbar/ClassicRTEToolbar";
-import StandardRTEToolbar from "./components/ReactTrixRTEToolbar/StandardRTEToolbar";
+import ReactTrixRTEToolbar from "./components/ReactTrixRTEToolbar/ReactTrixRTEToolbar";
 
 export {
   ReactTrixRTEInput,
-  ClassicRTEToolbar,
-  StandardRTEToolbar,
+  ReactTrixRTEToolbar,
 };

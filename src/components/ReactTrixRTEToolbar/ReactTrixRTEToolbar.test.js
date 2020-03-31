@@ -1,27 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ClassicRTEToolbar from './ClassicRTEToolbar';
-import ToolbarButtonGroup from "../Shared/ToolbarButtonGroup";
-import ToolbarSpacer from "../Shared/ToolbarSpacer";
+import ReactTrixRTEToolbar from './ReactTrixRTEToolbar';
+import ToolbarButtonGroup from "./ToolbarComponent/ToolbarButtonGroup";
+import ToolbarSpacer from "./ToolbarComponent/ToolbarSpacer";
 
-describe('ClassicRTEToolbar', () => {
+describe('ReactTrixRTEToolbar', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(<ClassicRTEToolbar />);
+    const wrapper = shallow(<ReactTrixRTEToolbar />);
     expect(wrapper).toHaveLength(1);
   });
 
   it('renders with toolbarId', () => {
-    const wrapper = shallow(<ClassicRTEToolbar toolbarId="react-trix-rte-editor" />);
+    const wrapper = shallow(<ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />);
     expect(wrapper.find('trix-toolbar').props().id).toEqual("react-trix-rte-editor");
   });
 
   it('renders toolbar without grouping actions', () => {
-    const wrapper = shallow(<ClassicRTEToolbar disableGroupingAction />);
+    const wrapper = shallow(<ReactTrixRTEToolbar disableGroupingAction />);
     expect(wrapper.find('.trix-button-group')).toHaveLength(1);
   });
 
   it('renders toolbar with grouping actions', () => {
-    const wrapper = shallow(<ClassicRTEToolbar />);
+    const wrapper = shallow(<ReactTrixRTEToolbar />);
     expect(wrapper.find(ToolbarButtonGroup)).toHaveLength(4);
     expect(wrapper.find(ToolbarSpacer)).toHaveLength(1);
   });

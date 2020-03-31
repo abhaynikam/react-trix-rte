@@ -182,3 +182,5 @@ export const TOOLBAR_ACTION_GROUP_OPTS = {
   "file-tools": "trix-button-group trix-button-group--file-tools",
   "history-tools": "trix-button-group trix-button-group--history-tools"
 };
+
+export const SPACER_BEFORE_TOOL_GROUP = "history-tools";
