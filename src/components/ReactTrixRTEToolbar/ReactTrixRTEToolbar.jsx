@@ -11,7 +11,11 @@ import { TOOLBAR_ACTION_OPTS, SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ReactTrixRTEToolbar(props) {
   const { disableGroupingAction = false, toolbarId, toolbarActions } = props;
-  const allowedToolbarActions = R.pick(toolbarActions, TOOLBAR_ACTION_OPTS);
+  const isToolbarActionPresent = toolbarActions && R.not(R.isEmpty(toolbarActions));
+  let allowedToolbarActions = TOOLBAR_ACTION_OPTS;
+  if(isToolbarActionPresent) {
+    allowedToolbarActions = R.pick(toolbarActions, TOOLBAR_ACTION_OPTS);
+  }
 
   function renderGroupedToolbarActions() {
     const groupedToolbarActionOptions = groupBy(allowedToolbarActions, "trixButtonGroup");
@@ -54,7 +58,9 @@ function ReactTrixRTEToolbar(props) {
   }
 
   function renderToolbarLinkDialog() {
-    if (R.includes("link", toolbarActions)) {
+    if (isToolbarActionPresent && R.includes("link", toolbarActions)) {
+      return <ToolbarLinkDialog />;
+    } else if(!isToolbarActionPresent) {
       return <ToolbarLinkDialog />;
     }
   }

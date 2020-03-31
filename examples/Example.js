@@ -20,7 +20,6 @@ class Example extends React.Component {
       <div>
         <ReactTrixRTEToolbar
           toolbarId="rich-text-toolbar"
-          toolbarActions={["bold", "italic"]}
         />
         <ReactTrixRTEInput
           toolbarId="rich-text-toolbar"
