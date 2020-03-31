@@ -1,0 +1,91 @@
+#### React Trix RTE
+
+React Trix rich text editor is react wrapper built for the Trix editor created by [Basecamp](https://trix-editor.org/). We have built this library because we were rewriting the same component in multiple project.
+
+This wrapper uses React hooks and adds readable event listeners on the Trix editor. The library also adds two toolbar components which has the ability to customize the toolbar actions as per our need.
+
+#### Installation
+
+To install the React Trix RTE, run the following command in the console.
+
+```
+npm install react-trix-rte
+OR
+yarn add react-trix-rte
+```
+
+#### Usage
+
+```javascript
+import React, { useState } from "react";
+import { ReactTrixRTEInput } from "react-trix-rte";
+
+export default function TrixEditor(props) {
+  const [value, setValue] = useState("");
+
+  function handleChange(event, newValue) {
+    setValue(newValue); // OR custom on change listener.
+  }
+
+  return (
+    <ReactTrixRTEInput
+      defaultValue="<div>React Trix Rich Text Editor</div>"
+      onChange={handleChange}
+    />
+  )
+}
+```
+
+#### ReactTrixInput API
+
+`ReactTrixInput` is the Trix editor input which by default comes with the toolbar. The `ReactTrixInput` comes with following properties that could be accepted.
+
+| Name                | Type | Description |
+| ------------------- | ---- | ----------- |
+| toolbarId           | string   | If a custom toolbar is used for the Trix Input, pass the `toolbarId` of the custom toolbar to the input. |
+| defaultValue        | string   | The default value of the React Trix Input |
+| trixInputRef        | function | Adds a custom ref to the React Trix Input to programmatically edit text |
+| onBeforeInitialize  | function | Fires when the `<trix-editor>` element is attached to the DOM just before Trix installs its editor object. |
+| onInitialize        | function | Fires when the `<trix-editor>` element is attached to the DOM and its editor object is ready for use. |
+| onChange            | function | Fires whenever the editor’s contents have changed. |
+| onSelectionChange   | function | Fires any time the selected range changes in the editor. |
+| onBlur              | function | Fire when the editor loses focus, respectively. |
+| onFocus             | function | Fire when the editor gains focus, respectively. |
+| onFileAccepted      | function | Fires when a file is dropped or inserted into the editor. You can access the DOM File object through the file property on the event. Call preventDefault on the event to prevent attaching the file to the document. |
+| onAttachmentAdd     | function | Fires after an attachment is added to the document. You can access the Trix attachment object through the attachment property on the event. If the attachment object has a file property, you should store this file remotely and set the attachment’s URL attribute. See the attachment example for detailed information. |
+| onAttachmentRemove  | function | Fires when an attachment is removed from the document. You can access the Trix attachment object through the attachment property on the event. You may wish to use this event to clean up remotely stored files. |
+
+#### ReactTrixRTEToolbar API
+
+`ReactTrixRTEToolbar` is the custom Trix editor toolbar component. This component helps in customizing the toolbar options, classes and attributes in better way.
+
+| Name                | Type | Description |
+| ------------------- | ---- | ----------- |
+| toolbarId             | string   | The ReactTrixInput initialize the default toolbar if the `toolbarId` is missing or not matching. Make sure the `toolbarId` matches. |
+| disableGroupingAction | boolean  | Defaults to `false`. If the `disableGroupingAction` is enabled the toolbar actions are not grouped for a type. Example: text tools won't be grouped |
+
+#### Custom Toolbar Usage
+
+```javascript
+import React, { useState } from "react";
+import { ReactTrixRTEInput, ReactTrixRTEToolbar } from "react-trix-rte";
+
+export default function TrixEditor(props) {
+  const [value, setValue] = useState("");
+
+  function handleChange(event, newValue) {
+    setValue(newValue); // OR custom on change listener.
+  }
+
+  return (
+    <Fragment>
+      <ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />
+      <ReactTrixRTEInput
+        toolbarId="react-trix-rte-editor"
+        defaultValue="<div>React Trix Rich Text Editor</div>"
+        onChange={handleChange}
+      />
+    </Fragment>
+  )
+}
+```
