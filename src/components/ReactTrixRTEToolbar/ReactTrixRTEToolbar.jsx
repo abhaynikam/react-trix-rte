@@ -10,10 +10,11 @@ import { groupBy, mapIndexed } from "../Shared/utils";
 import { TOOLBAR_ACTION_OPTS, SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ReactTrixRTEToolbar(props) {
-  const { disableGroupingAction = false, toolbarId } = props;
+  const { disableGroupingAction = false, toolbarId, toolbarActions } = props;
+  const allowedToolbarActions = R.pick(toolbarActions, TOOLBAR_ACTION_OPTS);
 
   function renderGroupedToolbarActions() {
-    const groupedToolbarActionOptions = groupBy(TOOLBAR_ACTION_OPTS, "trixButtonGroup");
+    const groupedToolbarActionOptions = groupBy(allowedToolbarActions, "trixButtonGroup");
     let groupedToolbarActionHTML = [];
 
     R.mapObjIndexed((toolbarActionOptions, key) => {
@@ -36,8 +37,8 @@ function ReactTrixRTEToolbar(props) {
 
   function renderUnGroupedToolbarActions() {
     return mapIndexed((toolbarActionKey, index) => {
-      return <ToolbarButton key={index} {...TOOLBAR_ACTION_OPTS[toolbarActionKey]} />
-    })(R.keys(TOOLBAR_ACTION_OPTS));
+      return <ToolbarButton key={index} {...allowedToolbarActions[toolbarActionKey]} />
+    })(R.keys(allowedToolbarActions));
   }
 
   function renderToolbarActions() {
@@ -52,19 +53,26 @@ function ReactTrixRTEToolbar(props) {
     }
   }
 
+  function renderToolbarLinkDialog() {
+    if (R.includes("link", toolbarActions)) {
+      return <ToolbarLinkDialog />;
+    }
+  }
+
   return (
     <trix-toolbar id={toolbarId}>
       <div className="trix-button-row">
         {renderToolbarActions()}
       </div>
-      <ToolbarLinkDialog />
+      {renderToolbarLinkDialog()}
     </trix-toolbar>
   );
 }
 
 ReactTrixRTEToolbar.propTypes = {
   disableGroupingAction: PropTypes.bool,
-  toolbarId: PropTypes.string
+  toolbarId: PropTypes.string,
+  toolbarActions: PropTypes.array
 }
 
 export default ReactTrixRTEToolbar;

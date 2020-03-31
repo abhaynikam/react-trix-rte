@@ -18,7 +18,10 @@ class Example extends React.Component {
   render() {
     return (
       <div>
-        <ReactTrixRTEToolbar toolbarId="rich-text-toolbar" />
+        <ReactTrixRTEToolbar
+          toolbarId="rich-text-toolbar"
+          toolbarActions={["bold", "italic"]}
+        />
         <ReactTrixRTEInput
           toolbarId="rich-text-toolbar"
           defaultValue="<p>Hello</p>"

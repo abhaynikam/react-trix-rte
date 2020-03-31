@@ -63,7 +63,7 @@ export default function TrixEditor(props) {
 | ------------------- | ---- | ----------- |
 | toolbarId             | string   | The ReactTrixInput initialize the default toolbar if the `toolbarId` is missing or not matching. Make sure the `toolbarId` matches. |
 | disableGroupingAction | boolean  | Defaults to `false`. If the `disableGroupingAction` is enabled the toolbar actions are not grouped for a type. Example: text tools won't be grouped |
-
+| toolbarActions        | array    | Allows customizing the list of toolbar actions. The available actions are ["bold", "italic", "strike", "link", "heading1", "quote", "code", "bullet", "number", "outdent", "indent", "attachFiles", "undo", "redo"].  |
 #### Custom Toolbar Usage
 
 ```javascript
