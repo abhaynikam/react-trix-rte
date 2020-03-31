@@ -44,13 +44,13 @@ export default function TrixEditor(props) {
 | ------------------- | ---- | ----------- |
 | toolbarId           | string   | If a custom toolbar is used for the Trix Input, pass the `toolbarId` of the custom toolbar to the input. |
 | defaultValue        | string   | The default value of the React Trix Input |
-| trixInputRef        | function | Adds a custom ref to the React Trix Input to programmatically edit text |
+| trixInputRef        | function | Adds a custom ref to the React Trix Input to programmatically edit text. Read the documentation for manual things you can perform on Trix editor [here](https://github.com/basecamp/trix#editing-text-programmatically) |
 | onBeforeInitialize  | function | Fires when the `<trix-editor>` element is attached to the DOM just before Trix installs its editor object. |
 | onInitialize        | function | Fires when the `<trix-editor>` element is attached to the DOM and its editor object is ready for use. |
 | onChange            | function | Fires whenever the editor’s contents have changed. |
 | onSelectionChange   | function | Fires any time the selected range changes in the editor. |
-| onBlur              | function | Fire when the editor loses focus, respectively. |
-| onFocus             | function | Fire when the editor gains focus, respectively. |
+| onBlur              | function | Fire when the editor loses focus. |
+| onFocus             | function | Fire when the editor gains focus. |
 | onFileAccepted      | function | Fires when a file is dropped or inserted into the editor. You can access the DOM File object through the file property on the event. Call preventDefault on the event to prevent attaching the file to the document. |
 | onAttachmentAdd     | function | Fires after an attachment is added to the document. You can access the Trix attachment object through the attachment property on the event. If the attachment object has a file property, you should store this file remotely and set the attachment’s URL attribute. See the attachment example for detailed information. |
 | onAttachmentRemove  | function | Fires when an attachment is removed from the document. You can access the Trix attachment object through the attachment property on the event. You may wish to use this event to clean up remotely stored files. |
