@@ -16,10 +16,9 @@
     "prepublish": "npm run clean && npm run test && npm run build",
     "start": "webpack-dev-server --config examples/webpack.config.live.babel.js",
     "test": "npm run lint && npm run coverage",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
@@ -50,6 +49,7 @@
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.5",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
