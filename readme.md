@@ -12,6 +12,8 @@ This wrapper uses React hooks and adds readable event listeners on the Trix edit
 
 Please see the some live example on [ReactTrixRTE-Storybook](https://abhaynikam.github.io/react-trix-rte)
 
+![ReactTrixRTE](https://d1sz9tkli0lfjq.cloudfront.net/items/242v2m2W362X110O2307/Screen%20Recording%202020-04-06%20at%2012.40%20AM.gif)
+
 
 ### Installation
 
