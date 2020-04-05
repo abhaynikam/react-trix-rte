@@ -8,12 +8,12 @@ React Trix rich text editor is react wrapper built for the Trix editor created b
 
 This wrapper uses React hooks and adds readable event listeners on the Trix editor. The library also adds two toolbar components which has the ability to customize the toolbar actions as per our need.
 
-#### Demo
+### Demo
 
 Please see the some live example on [ReactTrixRTE-Storybook](https://abhaynikam.github.io/react-trix-rte)
 
 
-#### Installation
+### Installation
 
 To install the React Trix RTE, run the following command in the console.
 
@@ -23,7 +23,7 @@ OR
 yarn add react-trix-rte
 ```
 
-#### Usage
+### Usage
 
 ```javascript
 import React, { useState } from "react";
@@ -45,7 +45,7 @@ export default function TrixEditor(props) {
 }
 ```
 
-#### ReactTrixInput API
+### ReactTrixInput API
 
 `ReactTrixInput` is the Trix editor input which by default comes with the toolbar. The `ReactTrixInput` comes with following properties that could be accepted.
 
@@ -64,7 +64,7 @@ export default function TrixEditor(props) {
 | onAttachmentAdd     | function | Fires after an attachment is added to the document. You can access the Trix attachment object through the attachment property on the event. If the attachment object has a file property, you should store this file remotely and set the attachment’s URL attribute. See the attachment example for detailed information. |
 | onAttachmentRemove  | function | Fires when an attachment is removed from the document. You can access the Trix attachment object through the attachment property on the event. You may wish to use this event to clean up remotely stored files. |
 
-#### ReactTrixRTEToolbar API
+### ReactTrixRTEToolbar API
 
 `ReactTrixRTEToolbar` is the custom Trix editor toolbar component. This component helps in customizing the toolbar options, classes and attributes in better way.
 
@@ -73,7 +73,8 @@ export default function TrixEditor(props) {
 | toolbarId             | string   | The ReactTrixInput initialize the default toolbar if the `toolbarId` is missing or not matching. Make sure the `toolbarId` matches. |
 | disableGroupingAction | boolean  | Defaults to `false`. If the `disableGroupingAction` is enabled the toolbar actions are not grouped for a type. Example: text tools won't be grouped |
 | toolbarActions        | array    | Allows customizing the list of toolbar actions. The available actions are ["bold", "italic", "strike", "link", "heading1", "quote", "code", "bullet", "number", "outdent", "indent", "attachFiles", "undo", "redo"].  |
-#### Custom Toolbar Usage
+
+### Custom Toolbar Usage
 
 ```javascript
 import React, { useState } from "react";
@@ -99,12 +100,12 @@ export default function TrixEditor(props) {
 }
 ```
 
-#### Contributing
+### Contributing
 
 Read more about [contributing](https://github.com/abhaynikam/react-trix-rte/blob/7704eb681801fe2eacd00a5da50cd0bfb8c0238d/CONTRIBUTING.md) to the ReactTrixRTE.
 
-#### Author
+### Author
 [Abhay Nikam](https://www.abhaynikam.me/pages/about)
 
-#### License
+### License
 This project is licensed under the [MIT License](https://github.com/abhaynikam/react-trix-rte/blob/7704eb681801fe2eacd00a5da50cd0bfb8c0238d/LICENSE)
