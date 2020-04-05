@@ -1,8 +1,17 @@
-#### React Trix RTE
+# React Trix RTE
+
+![NPM](https://img.shields.io/npm/l/react-trix-rte?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/abhaynikam/react-trix-rte/Tests?style=flat-square)
+![npm](https://img.shields.io/npm/dt/react-trix-rte?style=flat-square)
 
 React Trix rich text editor is react wrapper built for the Trix editor created by [Basecamp](https://trix-editor.org/). We have built this library because we were rewriting the same component in multiple project.
 
 This wrapper uses React hooks and adds readable event listeners on the Trix editor. The library also adds two toolbar components which has the ability to customize the toolbar actions as per our need.
+
+#### Demo
+
+Please see the some live example on [ReactTrixRTE-Storybook](https://abhaynikam.github.io/react-trix-rte)
+
 
 #### Installation
 
@@ -89,3 +98,13 @@ export default function TrixEditor(props) {
   )
 }
 ```
+
+#### Contributing
+
+Read more about [contributing](https://github.com/abhaynikam/react-trix-rte/blob/7704eb681801fe2eacd00a5da50cd0bfb8c0238d/CONTRIBUTING.md) to the ReactTrixRTE.
+
+#### Author
+[Abhay Nikam](https://www.abhaynikam.me/pages/about)
+
+#### License
+This project is licensed under the [MIT License](https://github.com/abhaynikam/react-trix-rte/blob/7704eb681801fe2eacd00a5da50cd0bfb8c0238d/LICENSE)
