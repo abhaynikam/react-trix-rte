@@ -17,7 +17,7 @@
     "start": "webpack-dev-server --config examples/webpack.config.live.babel.js",
     "test": "npm run lint && npm run coverage",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
