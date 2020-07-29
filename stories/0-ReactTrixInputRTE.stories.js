@@ -74,3 +74,11 @@ export const WithAttachmentRemove = () => (
 export const WithIsRailsDirectUpload = () => (
   <ReactTrixRTEInput isRailsDirectUpload />
 );
+
+export const WithPlaceholder = () => (
+  <ReactTrixRTEInput placeholder="Enter the description" />
+);
+
+export const WithAutoFocus = () => (
+  <ReactTrixRTEInput autofocus />
+);

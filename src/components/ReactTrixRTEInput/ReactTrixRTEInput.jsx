@@ -19,7 +19,9 @@ function ReactTrixRTEInput(props) {
     onSelectionChange,
     onBeforeInitialize,
     trixInputRef,
-    isRailsDirectUpload = false
+    isRailsDirectUpload = false,
+    placeholder,
+    autofocus,
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
@@ -29,6 +31,8 @@ function ReactTrixRTEInput(props) {
     "data-direct-upload-url": RAILS_DIRECT_UPLOADS_URL,
     "data-blob-url-template": RAILS_SERVICE_BLOB_URL
   } : {};
+  let trixEditorOptions = {}
+  if(autofocus) trixEditorOptions["autofocus"] = true;
 
   useEffect(() => {
     trixRTEInputRef.current.addEventListener("trix-change", handleChange);
@@ -73,9 +77,11 @@ function ReactTrixRTEInput(props) {
       />
       <trix-editor
         toolbar={toolbarId}
+        placeholder={placeholder}
         ref={trixRTEInputRef}
         input={trixRTEInputId}
         {...directUploadOptions}
+        {...trixEditorOptions}
       />
     </Fragment>
   );
@@ -95,6 +101,8 @@ ReactTrixRTEInput.propTypes = {
   onBeforeInitialize: PropTypes.func,
   trixInputRef: PropTypes.func,
   isRailsDirectUpload: PropTypes.bool,
+  placeholder: PropTypes.string,
+  autofocus: PropTypes.bool,
 };
 
 export default ReactTrixRTEInput;

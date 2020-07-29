@@ -49,3 +49,17 @@ export const WithRailsDirectUpload = () => (
     <ReactTrixRTEInput toolbarId="react-trix-rte-editor" isRailsDirectUpload />
   </Fragment>
 );
+
+export const WithPlaceholder = () => (
+  <Fragment>
+    <ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />
+    <ReactTrixRTEInput toolbarId="react-trix-rte-editor" placeholder="Enter your text." />
+  </Fragment>
+);
+
+export const WithAutoFocus = () => (
+  <Fragment>
+    <ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />
+    <ReactTrixRTEInput toolbarId="react-trix-rte-editor" autofocus />
+  </Fragment>
+);

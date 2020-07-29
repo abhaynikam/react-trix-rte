@@ -24,4 +24,17 @@ describe('ReactTrixRTEInput', () => {
     expect(wrapper.find('trix-editor').props()['data-direct-upload-url']).toEqual(RAILS_DIRECT_UPLOADS_URL);
     expect(wrapper.find('trix-editor').props()['data-blob-url-template']).toEqual(RAILS_SERVICE_BLOB_URL);
   });
+
+  it('renders with placeholder', () => {
+    const wrapper = shallow(<ReactTrixRTEInput placeholder="Enter the description" />);
+    expect(wrapper.find('trix-editor').props().placeholder).toEqual("Enter the description");
+
+    const withoutPlaceholderWrapper = shallow(<ReactTrixRTEInput />);
+    expect(withoutPlaceholderWrapper.find('trix-editor').props().placeholder).toEqual(undefined);
+  });
+
+  it('renders with autofocus', () => {
+    const wrapper = shallow(<ReactTrixRTEInput autofocus />);
+    expect(wrapper.find('trix-editor').props().autofocus).toEqual(true);
+  });
 });
