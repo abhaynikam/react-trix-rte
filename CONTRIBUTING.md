@@ -11,6 +11,7 @@ To start contributing to the package. We should follow following steps.
 - Add test cases for the changes made in the pull request. Make sure they are passing by running `yarn/npm test`.
 - Update documentation for the changes made if needed.
 - Add a simple story to demonstrate the change for the end user if needed.
+- Add a changelog for the new feature or fixes.
 
 Push to your fork. Write a [good commit message][commit]. Submit a pull request.
 
