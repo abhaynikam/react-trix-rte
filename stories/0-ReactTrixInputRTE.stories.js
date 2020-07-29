@@ -78,3 +78,7 @@ export const WithIsRailsDirectUpload = () => (
 export const WithPlaceholder = () => (
   <ReactTrixRTEInput placeholder="Enter the description" />
 );
+
+export const WithAutoFocus = () => (
+  <ReactTrixRTEInput autofocus />
+);

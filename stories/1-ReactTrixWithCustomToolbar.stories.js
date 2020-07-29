@@ -56,3 +56,10 @@ export const WithPlaceholder = () => (
     <ReactTrixRTEInput toolbarId="react-trix-rte-editor" placeholder="Enter your text." />
   </Fragment>
 );
+
+export const WithAutoFocus = () => (
+  <Fragment>
+    <ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />
+    <ReactTrixRTEInput toolbarId="react-trix-rte-editor" autofocus />
+  </Fragment>
+);

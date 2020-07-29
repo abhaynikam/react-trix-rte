@@ -32,4 +32,9 @@ describe('ReactTrixRTEInput', () => {
     const withoutPlaceholderWrapper = shallow(<ReactTrixRTEInput />);
     expect(withoutPlaceholderWrapper.find('trix-editor').props().placeholder).toEqual(undefined);
   });
+
+  it('renders with autofocus', () => {
+    const wrapper = shallow(<ReactTrixRTEInput autofocus />);
+    expect(wrapper.find('trix-editor').props().autofocus).toEqual(true);
+  });
 });
