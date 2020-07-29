@@ -42,3 +42,10 @@ export const WithCustomizedToolbarActionWithGrouping = () => (
     <ReactTrixRTEInput toolbarId="react-trix-rte-editor" />
   </Fragment>
 );
+
+export const WithRailsDirectUpload = () => (
+  <Fragment>
+    <ReactTrixRTEToolbar toolbarId="react-trix-rte-editor" />
+    <ReactTrixRTEInput toolbarId="react-trix-rte-editor" isRailsDirectUpload />
+  </Fragment>
+);
