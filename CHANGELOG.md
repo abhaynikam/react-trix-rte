@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 1.0.5 (29-July-2020)
+
 * Add ability to allow Rails direct uploading via Trix Editor. ([@abhaynikam][])
 * Add options to configure placeholder and autofocus for Trix Editor. ([@abhaynikam][])
 
