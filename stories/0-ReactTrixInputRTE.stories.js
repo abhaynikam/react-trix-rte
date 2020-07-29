@@ -70,3 +70,7 @@ export const WithAttachmentAdd = () => (
 export const WithAttachmentRemove = () => (
   <ReactTrixRTEInput onAttachmentRemove={action('onAttachmentRemove')} />
 );
+
+export const WithIsRailsDirectUpload = () => (
+  <ReactTrixRTEInput isRailsDirectUpload />
+);
