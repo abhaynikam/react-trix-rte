@@ -55,6 +55,7 @@ export default function TrixEditor(props) {
 | ------------------- | ---- | ----------- |
 | toolbarId           | string   | If a custom toolbar is used for the Trix Input, pass the `toolbarId` of the custom toolbar to the input. |
 | isRailsDirectUpload | boolean | React Trix editor support direct uploading of the files to the service if you are using Rails as a backend server. This defaults to `false` |
+| placeholder | string | Adds a placeholder to the React Trix Input |
 | defaultValue        | string   | The default value of the React Trix Input |
 | trixInputRef        | function | Adds a custom ref to the React Trix Input to programmatically edit text. Read the documentation for manual things you can perform on Trix editor [here](https://github.com/basecamp/trix#editing-text-programmatically) |
 | onBeforeInitialize  | function | Fires when the `<trix-editor>` element is attached to the DOM just before Trix installs its editor object. |

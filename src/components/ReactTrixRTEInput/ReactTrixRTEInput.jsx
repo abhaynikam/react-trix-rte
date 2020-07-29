@@ -19,7 +19,8 @@ function ReactTrixRTEInput(props) {
     onSelectionChange,
     onBeforeInitialize,
     trixInputRef,
-    isRailsDirectUpload = false
+    isRailsDirectUpload = false,
+    placeholder
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
@@ -72,6 +73,7 @@ function ReactTrixRTEInput(props) {
         name="content"
       />
       <trix-editor
+        placeholder={placeholder}
         toolbar={toolbarId}
         ref={trixRTEInputRef}
         input={trixRTEInputId}
@@ -95,6 +97,7 @@ ReactTrixRTEInput.propTypes = {
   onBeforeInitialize: PropTypes.func,
   trixInputRef: PropTypes.func,
   isRailsDirectUpload: PropTypes.bool,
+  placeholder: PropTypes.string
 };
 
 export default ReactTrixRTEInput;
