@@ -2,6 +2,7 @@ import Trix from "trix";
 import PropTypes from 'prop-types';
 import React, { Fragment, useState, useRef, useEffect } from "react";
 
+import { RAILS_DIRECT_UPLOADS_URL, RAILS_SERVICE_BLOB_URL } from "./constants";
 import './ReactTrixRTEInput.style';
 
 function ReactTrixRTEInput(props) {
@@ -17,12 +18,17 @@ function ReactTrixRTEInput(props) {
     onAttachmentRemove,
     onSelectionChange,
     onBeforeInitialize,
-    trixInputRef
+    trixInputRef,
+    isRailsDirectUpload = false
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
   const uniqueDateTimestamp = new Date().getTime();
   const trixRTEInputId = `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const directUploadOptions = isRailsDirectUpload ? {
+    "data-direct-upload-url": RAILS_DIRECT_UPLOADS_URL,
+    "data-blob-url-template": RAILS_SERVICE_BLOB_URL
+  } : {};
 
   useEffect(() => {
     trixRTEInputRef.current.addEventListener("trix-change", handleChange);
@@ -69,6 +75,7 @@ function ReactTrixRTEInput(props) {
         toolbar={toolbarId}
         ref={trixRTEInputRef}
         input={trixRTEInputId}
+        {...directUploadOptions}
       />
     </Fragment>
   );
@@ -87,6 +94,7 @@ ReactTrixRTEInput.propTypes = {
   onInitialize: PropTypes.func,
   onBeforeInitialize: PropTypes.func,
   trixInputRef: PropTypes.func,
+  isRailsDirectUpload: PropTypes.bool,
 };
 
 export default ReactTrixRTEInput;
