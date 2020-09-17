@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 1.0.6 (17-September-2020)
+
+* Bump trix version `1.2.3` -> `1.2.4`. ([@abhaynikam][])
+
 ## 1.0.5 (29-July-2020)
 
 * Add ability to allow Rails direct uploading via Trix Editor. ([@abhaynikam][])

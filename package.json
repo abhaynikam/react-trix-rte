@@ -38,7 +38,7 @@
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "trix": "^1.2.3"
+    "trix": "^1.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
