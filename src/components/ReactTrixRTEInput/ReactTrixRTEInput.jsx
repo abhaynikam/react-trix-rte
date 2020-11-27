@@ -1,4 +1,3 @@
-import Trix from "trix";
 import PropTypes from 'prop-types';
 import React, { Fragment, useState, useRef, useEffect } from "react";
 
