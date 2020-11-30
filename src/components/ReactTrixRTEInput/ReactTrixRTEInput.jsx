@@ -25,7 +25,8 @@ function ReactTrixRTEInput(props) {
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
   const uniqueDateTimestamp = new Date().getTime();
-  const trixRTEInputId = `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const trixRTEInputId = props.id || `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const trixRTEInputName = props.name || "content";
   const directUploadOptions = isRailsDirectUpload ? {
     "data-direct-upload-url": RAILS_DIRECT_UPLOADS_URL,
     "data-blob-url-template": RAILS_SERVICE_BLOB_URL
@@ -72,7 +73,7 @@ function ReactTrixRTEInput(props) {
         id={trixRTEInputId}
         value={value}
         type="hidden"
-        name="content"
+        name={trixRTEInputName}
       />
       <trix-editor
         toolbar={toolbarId}
@@ -87,8 +88,10 @@ function ReactTrixRTEInput(props) {
 }
 
 ReactTrixRTEInput.propTypes = {
+  id: PropTypes.string,
   toolbarId: PropTypes.string,
   defaultValue: PropTypes.string,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
