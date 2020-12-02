@@ -1,6 +1,8 @@
 # Change log
 
 ## master (unreleased)
+
+## 1.0.7 (02-December-2020)
 * Remove 'unused' import of Trix to prevent webpack packaging conflicts with projects. ([@CUnknown][])
 * Support ID and Name input attribute as component props. ([@CUnknown][])
 

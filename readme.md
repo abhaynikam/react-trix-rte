@@ -48,8 +48,8 @@ export default function TrixEditor(props) {
 }
 ```
 
-### Upgrading to 0.6.0
-React Trix RTE version `0.6.0` removes the dependency import for Trix because using Trix outside directly causes problems. Read issue: [17](https://github.com/abhaynikam/react-trix-rte/issues/17) and [19](https://github.com/abhaynikam/react-trix-rte/pull/19).
+### Upgrading to 1.0.7
+React Trix RTE version `1.0.7` removes the dependency import for Trix because using Trix outside directly causes problems. Read issue: [17](https://github.com/abhaynikam/react-trix-rte/issues/17) and [19](https://github.com/abhaynikam/react-trix-rte/pull/19).
 
 Import `import Trix from "trix";` to the component using React Trix RTE.
 
