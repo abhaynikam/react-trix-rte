@@ -1,8 +1,8 @@
 # Change log
 
 ## master (unreleased)
-* Remove 'unused' import of Trix to prevent webpack packaging conflicts with projects.
-* Support ID and Name input attribute as component props.
+* Remove 'unused' import of Trix to prevent webpack packaging conflicts with projects. ([@CUnknown][])
+* Support ID and Name input attribute as component props. ([@CUnknown][])
 
 ## 1.0.6 (17-September-2020)
 
@@ -18,3 +18,4 @@
 * Create React Trix RTE NPM package. ([@abhaynikam][])
 
 [@abhaynikam]: https://github.com/abhaynikam
+[@CUnknown](https://github.com/CUnknown)

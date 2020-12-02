@@ -1,3 +1,4 @@
+import Trix from 'trix';
 import React from 'react';
 
 import { ReactTrixRTEInput, ReactTrixRTEToolbar } from '../src/index';

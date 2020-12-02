@@ -28,8 +28,8 @@ yarn add react-trix-rte
 ### Usage
 
 ```javascript
-import React, { useState } from "react";
 import Trix from "trix";
+import React, { useState } from "react";
 import { ReactTrixRTEInput } from "react-trix-rte";
 
 export default function TrixEditor(props) {
@@ -47,6 +47,11 @@ export default function TrixEditor(props) {
   )
 }
 ```
+
+### Upgrading to 0.6.0
+React Trix RTE version `0.6.0` removes the dependency import for Trix because using Trix outside directly causes problems. Read issue: [17](https://github.com/abhaynikam/react-trix-rte/issues/17) and [19](https://github.com/abhaynikam/react-trix-rte/pull/19).
+
+Import `import Trix from "trix";` to the component using React Trix RTE.
 
 ### ReactTrixInput API
 
@@ -115,6 +120,8 @@ Read more about [contributing](https://github.com/abhaynikam/react-trix-rte/blob
 
 ### Author
 [Abhay Nikam](https://www.abhaynikam.me/pages/about)
+
+### Contributor
 [CUnknown](https://github.com/CUnknown)
 
 ### License
