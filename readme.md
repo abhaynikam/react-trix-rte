@@ -29,6 +29,7 @@ yarn add react-trix-rte
 
 ```javascript
 import React, { useState } from "react";
+import Trix from "trix";
 import { ReactTrixRTEInput } from "react-trix-rte";
 
 export default function TrixEditor(props) {
@@ -53,6 +54,8 @@ export default function TrixEditor(props) {
 
 | Name                | Type | Description |
 | ------------------- | ---- | ----------- |
+| id                  | string   | The HTML id attribute for the input field
+| name                | string   | The HTML name attribute for the input field
 | toolbarId           | string   | If a custom toolbar is used for the Trix Input, pass the `toolbarId` of the custom toolbar to the input. |
 | isRailsDirectUpload | boolean | React Trix editor support direct uploading of the files to the service if you are using Rails as a backend server. This defaults to `false` |
 | placeholder         | string | Adds a placeholder to the React Trix Input |
@@ -83,6 +86,7 @@ export default function TrixEditor(props) {
 
 ```javascript
 import React, { useState } from "react";
+import Trix from "trix";
 import { ReactTrixRTEInput, ReactTrixRTEToolbar } from "react-trix-rte";
 
 export default function TrixEditor(props) {
@@ -111,6 +115,7 @@ Read more about [contributing](https://github.com/abhaynikam/react-trix-rte/blob
 
 ### Author
 [Abhay Nikam](https://www.abhaynikam.me/pages/about)
+[CUnknown](https://github.com/CUnknown)
 
 ### License
 This project is licensed under the [MIT License](https://github.com/abhaynikam/react-trix-rte/blob/7704eb681801fe2eacd00a5da50cd0bfb8c0238d/LICENSE)
