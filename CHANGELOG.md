@@ -2,6 +2,9 @@
 
 ## master (unreleased)
 
+## 1.0.9 (18-January-2021)
+* Adds `elementProps` option to add custom props to the ToolbarButton. ([@abhaynikam][])
+
 ## 1.0.8 (18-January-2021)
 * Adds option to override or add custom toolbar actions. ([@abhaynikam][])
 

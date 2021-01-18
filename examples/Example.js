@@ -24,6 +24,9 @@ class Example extends React.Component {
         languageKey: "table",
         tabIndex: "-1",
         trixButtonGroup: "text-tools",
+        elementProps: {
+          onClick: () => { alert("clicked") },
+        },
         data: {
           trixAttribute: "table",
           trixKey: "ta",
