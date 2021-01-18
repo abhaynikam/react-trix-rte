@@ -1,3 +1,4 @@
+import Trix from 'trix';
 import React, { Fragment } from 'react';
 import { action } from '@storybook/addon-actions';
 import { ReactTrixRTEInput, ReactTrixRTEToolbar } from '../index';
@@ -42,6 +43,32 @@ export const WithCustomizedToolbarActionWithGrouping = () => (
     <ReactTrixRTEInput toolbarId="react-trix-rte-editor" />
   </Fragment>
 );
+
+export const WithCustomToolbarAction = () => {
+  const customOption = {
+    table: {
+      type: "button",
+      classNames: "trix-button trix-button--icon trix-button--icon-bold",
+      languageKey: "table",
+      tabIndex: "-1",
+      trixButtonGroup: "text-tools",
+      data: {
+        trixAttribute: "table",
+        trixKey: "ta",
+      },
+    }
+  };
+
+  return (
+    <Fragment>
+      <ReactTrixRTEToolbar
+        toolbarId="react-trix-rte-editor"
+        customToolbarActions={customOption}
+      />
+      <ReactTrixRTEInput toolbarId="react-trix-rte-editor" />
+    </Fragment>
+  );
+};
 
 export const WithRailsDirectUpload = () => (
   <Fragment>

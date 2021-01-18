@@ -1,3 +1,4 @@
+import Trix from 'trix';
 import React, { useRef } from 'react';
 import { action } from '@storybook/addon-actions';
 import { ReactTrixRTEInput } from '../index';

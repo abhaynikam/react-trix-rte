@@ -86,6 +86,7 @@ Import `import Trix from "trix";` to the component using React Trix RTE.
 | toolbarId             | string   | The ReactTrixInput initialize the default toolbar if the `toolbarId` is missing or not matching. Make sure the `toolbarId` matches. |
 | disableGroupingAction | boolean  | Defaults to `false`. If the `disableGroupingAction` is enabled the toolbar actions are not grouped for a type. Example: text tools won't be grouped |
 | toolbarActions        | array    | Allows customizing the list of toolbar actions. The available actions are `["bold", "italic", "strike", "link", "heading1", "quote", "code", "bullet", "number", "outdent", "indent", "attachFiles", "undo", "redo"]`.  |
+| customToolbarActions  | object   | Override the toolbar actions properties or add custom toolbar actions. You can refer to default [toolbar actions options](https://github.com/abhaynikam/react-trix-rte/blob/master/src/components/ReactTrixRTEToolbar/constants.js) |
 
 ### Custom Toolbar Usage
 

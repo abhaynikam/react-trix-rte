@@ -2,6 +2,9 @@
 
 ## master (unreleased)
 
+## 1.0.8 (18-January-2021)
+* Adds option to override or add custom toolbar actions. ([@abhaynikam][])
+
 ## 1.0.7 (02-December-2020)
 * Remove 'unused' import of Trix to prevent webpack packaging conflicts with projects. ([@CUnknown][])
 * Support ID and Name input attribute as component props. ([@CUnknown][])

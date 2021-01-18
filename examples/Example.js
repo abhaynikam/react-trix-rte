@@ -17,10 +17,25 @@ class Example extends React.Component {
   }
 
   render() {
+    const customOption = {
+      table: {
+        type: "button",
+        classNames: "trix-button trix-button--icon trix-button--icon-bold",
+        languageKey: "table",
+        tabIndex: "-1",
+        trixButtonGroup: "text-tools",
+        data: {
+          trixAttribute: "table",
+          trixKey: "ta",
+        },
+      }
+    };
+
     return (
       <div>
         <ReactTrixRTEToolbar
           toolbarId="rich-text-toolbar"
+          customToolbarActions={customOption}
         />
         <ReactTrixRTEInput
           toolbarId="rich-text-toolbar"

@@ -10,9 +10,9 @@ import { groupBy, mapIndexed } from "../Shared/utils";
 import { TOOLBAR_ACTION_OPTS, SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ReactTrixRTEToolbar(props) {
-  const { disableGroupingAction = false, toolbarId, toolbarActions } = props;
+  const { disableGroupingAction = false, toolbarId, toolbarActions, customToolbarActions } = props;
   const isToolbarActionPresent = toolbarActions && R.not(R.isEmpty(toolbarActions));
-  let allowedToolbarActions = TOOLBAR_ACTION_OPTS;
+  let allowedToolbarActions = Object.assign(TOOLBAR_ACTION_OPTS, customToolbarActions);
   if(isToolbarActionPresent) {
     allowedToolbarActions = R.pick(toolbarActions, TOOLBAR_ACTION_OPTS);
   }
@@ -78,7 +78,8 @@ function ReactTrixRTEToolbar(props) {
 ReactTrixRTEToolbar.propTypes = {
   disableGroupingAction: PropTypes.bool,
   toolbarId: PropTypes.string,
-  toolbarActions: PropTypes.array
+  toolbarActions: PropTypes.array,
+  customToolbarActions: PropTypes.object,
 }
 
 export default ReactTrixRTEToolbar;
