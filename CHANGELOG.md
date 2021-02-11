@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+## 1.0.10 (11-February-2021)
+* Bump React version to 1.17.1. ([@abhaynikam][])
+* Bump Trix version to 1.13.1. ([@abhaynikam][])
+* Update package.json to move React to peer dependencies. ([@abhaynikam][])
+
 ## 1.0.9 (18-January-2021)
 * Adds `elementProps` option to add custom props to the ToolbarButton. ([@abhaynikam][])
 
