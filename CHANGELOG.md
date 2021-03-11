@@ -2,6 +2,9 @@
 
 ## master (unreleased)
 
+## 1.0.11 (11-March-2021)
+* Fixes the ReactTrixRTEToolbar breaking because of missing dependency - ([@Axxxx0n][])
+
 ## 1.0.10 (11-February-2021)
 * Bump React version to 1.17.1. ([@abhaynikam][])
 * Bump Trix version to 1.13.1. ([@abhaynikam][])
@@ -31,4 +34,5 @@
 * Create React Trix RTE NPM package. ([@abhaynikam][])
 
 [@abhaynikam]: https://github.com/abhaynikam
-[@CUnknown](https://github.com/CUnknown)
+[@CUnknown]: https://github.com/CUnknown
+[@Axxxx0n]: https://github.com/Axxxx0n
