@@ -58,7 +58,7 @@ function ReactTrixRTEToolbar(props) {
   }
 
   function renderToolbarLinkDialog() {
-    if (isToolbarActionPresent && R.includes("link", toolbarActions)) {
+    if (isToolbarActionPresent && toolbarActions.includes("link")) {
       return <ToolbarLinkDialog />;
     } else if(!isToolbarActionPresent) {
       return <ToolbarLinkDialog />;

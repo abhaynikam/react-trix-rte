@@ -15,6 +15,12 @@ describe('ReactTrixRTEToolbar', () => {
     expect(wrapper.find('trix-toolbar').props().id).toEqual("react-trix-rte-editor");
   });
 
+  it('renders toolbar with specified toolbarActions', () => {
+    let toolbarActions = ["bold", "indent", "undo"]
+    const wrapper = shallow(<ReactTrixRTEToolbar toolbarActions={toolbarActions} />);
+    expect(wrapper.find(ToolbarButtonGroup)).toHaveLength(3);
+  });
+
   it('renders toolbar without grouping actions', () => {
     const wrapper = shallow(<ReactTrixRTEToolbar disableGroupingAction />);
     expect(wrapper.find('.trix-button-group')).toHaveLength(1);
