@@ -1,48 +1,56 @@
 import React from "react";
-import * as R from "ramda";
 import PropTypes from 'prop-types';
 
 import ToolbarButton from "./ToolbarComponent/ToolbarButton";
 import ToolbarSpacer from "./ToolbarComponent/ToolbarSpacer";
 import ToolbarLinkDialog from "./ToolbarComponent/ToolbarLinkDialog";
 import ToolbarButtonGroup from "./ToolbarComponent/ToolbarButtonGroup";
-import { groupBy, mapIndexed } from "../Shared/utils";
+import { groupBy } from "../Shared/utils";
 import { TOOLBAR_ACTION_OPTS, SPACER_BEFORE_TOOL_GROUP } from "./constants";
 
 function ReactTrixRTEToolbar(props) {
   const { disableGroupingAction = false, toolbarId, toolbarActions, customToolbarActions } = props;
-  const isToolbarActionPresent = toolbarActions && R.not(R.isEmpty(toolbarActions));
+  const isToolbarActionPresent = toolbarActions && toolbarActions.length !== 0;
   let allowedToolbarActions = Object.assign(TOOLBAR_ACTION_OPTS, customToolbarActions);
   if(isToolbarActionPresent) {
-    allowedToolbarActions = R.pick(toolbarActions, TOOLBAR_ACTION_OPTS);
+    allowedToolbarActions = toolbarActions.reduce((actions, toolbarAction) => {
+      const actionOptions = TOOLBAR_ACTION_OPTS[toolbarAction]
+      if (actionOptions) actions[toolbarAction] = actionOptions
+      return actions
+    }, {});
   }
 
   function renderGroupedToolbarActions() {
     const groupedToolbarActionOptions = groupBy(allowedToolbarActions, "trixButtonGroup");
     let groupedToolbarActionHTML = [];
 
-    R.mapObjIndexed((toolbarActionOptions, key) => {
-      if(R.equals(key, SPACER_BEFORE_TOOL_GROUP)) {
+    for (let groupName in groupedToolbarActionOptions) {
+      const toolbarActionOptions = groupedToolbarActionOptions[groupName]
+      if (groupName === SPACER_BEFORE_TOOL_GROUP) {
         const dateTimestamp = new Date().getTime();
         groupedToolbarActionHTML.push(<ToolbarSpacer key={dateTimestamp}/>);
       }
 
       groupedToolbarActionHTML.push(
         <ToolbarButtonGroup
-          key={key}
+          key={groupName}
           toolbarActionOptions={toolbarActionOptions}
-          groupName={key}
+          groupName={groupName}
         />
       );
-    })(groupedToolbarActionOptions);
+    }
 
     return groupedToolbarActionHTML;
   }
 
   function renderUnGroupedToolbarActions() {
-    return mapIndexed((toolbarActionKey, index) => {
-      return <ToolbarButton key={index} {...allowedToolbarActions[toolbarActionKey]} />
-    })(R.keys(allowedToolbarActions));
+    const ungroupedToolbarActionsHTML = []
+    for (let toolbarActionKey in allowedToolbarActions) {
+      ungroupedToolbarActionsHTML.push(
+        <ToolbarButton key={toolbarActionKey} {...allowedToolbarActions[toolbarActionKey]} />
+      )
+    }
+    return ungroupedToolbarActionsHTML
   }
 
   function renderToolbarActions() {
@@ -58,7 +66,7 @@ function ReactTrixRTEToolbar(props) {
   }
 
   function renderToolbarLinkDialog() {
-    if (isToolbarActionPresent && R.includes("link", toolbarActions)) {
+    if (isToolbarActionPresent && toolbarActions.includes("link")) {
       return <ToolbarLinkDialog />;
     } else if(!isToolbarActionPresent) {
       return <ToolbarLinkDialog />;
