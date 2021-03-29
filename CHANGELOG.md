@@ -1,7 +1,7 @@
 # Change log
 
 ## master (unreleased)
-* Fixes issue when binding trix events on the DOM element when React has not renderd the component yet and no DOM element reference is present. ([@CUnknown][])
+* Fixes issue when binding Trix events on the DOM element when React has not rendered the component yet and no DOM element reference is present. ([@CUnknown][])
 
 ## 1.0.11 (11-March-2021)
 * Fixes the ReactTrixRTEToolbar breaking because of missing dependency - ([@Axxxx0n][])
