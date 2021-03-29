@@ -35,7 +35,7 @@ function ReactTrixRTEInput(props) {
   if(autofocus) trixEditorOptions["autofocus"] = true;
 
   useEffect(() => {
-    if (trixInputRef.current) {
+    if (trixRTEInputRef && trixRTEInputRef.current) {
       trixRTEInputRef.current.addEventListener("trix-change", handleChange);
       if(onFocus) trixRTEInputRef.current.addEventListener("trix-focus", onFocus);
       if(onBlur) trixRTEInputRef.current.addEventListener("trix-blur", onBlur);
@@ -48,7 +48,7 @@ function ReactTrixRTEInput(props) {
     }
 
     return () => {
-      if (trixInputRef.current) {
+      if (trixRTEInputRef && trixRTEInputRef.current) {
         trixRTEInputRef.current.removeEventListener("trix-change", handleChange);
         if(onFocus) trixRTEInputRef.current.removeEventListener("trix-focus", onFocus);
         if(onBlur) trixRTEInputRef.current.removeEventListener("trix-blur", onBlur);
@@ -60,7 +60,7 @@ function ReactTrixRTEInput(props) {
         if(onBeforeInitialize) trixRTEInputRef.current.removeEventListener("trix-before-initialize", onBeforeInitialize);
       }
     };
-  }, [trixInputRef])
+  }, [])
 
   function handleChange(event) {
     const newValue = event.target.value;
