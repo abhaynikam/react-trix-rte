@@ -1,6 +1,8 @@
 # Change log
 
 ## master (unreleased)
+
+## 1.0.13 (29-March-2021)
 * Fixes issue when binding Trix events on the DOM element when React has not rendered the component yet and no DOM element reference is present. ([@CUnknown][])
 * Fixes ReactTrixRTEToolbar component crashing when using `toolbarActions`. Refer: (#24). ([@alejo4373][])
 * Removes Ramda dependency. ([@alejo4373][])
