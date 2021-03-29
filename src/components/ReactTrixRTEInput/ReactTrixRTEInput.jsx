@@ -60,7 +60,7 @@ function ReactTrixRTEInput(props) {
         if(onBeforeInitialize) trixRTEInputRef.current.removeEventListener("trix-before-initialize", onBeforeInitialize);
       }
     };
-  }, [])
+  }, [trixInputRef])
 
   function handleChange(event) {
     const newValue = event.target.value;
