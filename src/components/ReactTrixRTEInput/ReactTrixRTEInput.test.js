@@ -37,4 +37,9 @@ describe('ReactTrixRTEInput', () => {
     const wrapper = shallow(<ReactTrixRTEInput autofocus />);
     expect(wrapper.find('trix-editor').props().autofocus).toEqual(true);
   });
+
+  it('renders with custom class via className prop', () => {
+    const wrapper = shallow(<ReactTrixRTEInput className="tx-editor" />);
+    expect(wrapper.find('trix-editor').props().class).toEqual('tx-editor')
+  });
 });
