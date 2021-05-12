@@ -1,6 +1,7 @@
 import Trix from 'trix';
 import React, { useRef } from 'react';
 import { action } from '@storybook/addon-actions';
+import { withCssResources } from '@storybook/addon-cssresources';
 import { ReactTrixRTEInput } from '../index';
 
 export default {
@@ -83,3 +84,19 @@ export const WithPlaceholder = () => (
 export const WithAutoFocus = () => (
   <ReactTrixRTEInput autofocus />
 );
+
+export const WithCustomClassName = () => (
+  <ReactTrixRTEInput className="tx-rte-with-border" defaultValue="<p>Too apply some styling via the className see the <strong>CSS Resources</strong> Tab of this story</p>" />
+);
+
+WithCustomClassName.story = {
+  parameters: {
+    cssresources: [{
+      id: "Blue Border",
+      class: "tx-rte-with-border",
+      code: `<style>.tx-rte-with-border { border: 2px solid blue; }</style>`,
+      picked: false
+    }]
+  },
+  decorators: [withCssResources]
+}
