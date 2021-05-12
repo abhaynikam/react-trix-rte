@@ -66,6 +66,7 @@ Import `import Trix from "trix";` to the component using React Trix RTE.
 | placeholder         | string | Adds a placeholder to the React Trix Input |
 | defaultValue        | string | The default value of the React Trix Input |
 | autofocus           | boolean | Autofocus in the trix input. This is defaults to `false` |
+| className           | string | Apply a custom css class to the editor |
 | trixInputRef        | function | Adds a custom ref to the React Trix Input to programmatically edit text. Read the documentation for manual things you can perform on Trix editor [here](https://github.com/basecamp/trix#editing-text-programmatically) |
 | onBeforeInitialize  | function | Fires when the `<trix-editor>` element is attached to the DOM just before Trix installs its editor object. |
 | onInitialize        | function | Fires when the `<trix-editor>` element is attached to the DOM and its editor object is ready for use. |
