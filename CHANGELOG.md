@@ -1,6 +1,7 @@
 # Change log
 
 ## master (unreleased)
+* Enable `className` prop in `ReactTrixRTEInput`. Refer: [#30](/issues/30). ([@alejo4373][])
 
 ## 1.0.13 (29-March-2021)
 * Fixes issue when binding Trix events on the DOM element when React has not rendered the component yet and no DOM element reference is present. ([@CUnknown][])
