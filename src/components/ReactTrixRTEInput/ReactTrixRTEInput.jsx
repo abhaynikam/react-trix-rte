@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { Fragment, useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { getUniqInputId } from '../Shared/utils';
 
 import { RAILS_DIRECT_UPLOADS_URL, RAILS_SERVICE_BLOB_URL } from "./constants";
 import './ReactTrixRTEInput.style';
 
 function ReactTrixRTEInput(props) {
   const {
-    defaultValue = "",
+    defaultValue,
     toolbarId,
     onBlur,
     onFocus,
@@ -18,15 +19,14 @@ function ReactTrixRTEInput(props) {
     onSelectionChange,
     onBeforeInitialize,
     trixInputRef,
-    isRailsDirectUpload = false,
+    isRailsDirectUpload,
     placeholder,
     autofocus,
     className,
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
-  const uniqueDateTimestamp = new Date().getTime();
-  const trixRTEInputId = props.id || `react-trix-rte-input-${uniqueDateTimestamp}`;
+  const trixRTEInputId = props.id || getUniqInputId();
   const trixRTEInputName = props.name || "content";
   const directUploadOptions = isRailsDirectUpload ? {
     "data-direct-upload-url": RAILS_DIRECT_UPLOADS_URL,
@@ -38,28 +38,30 @@ function ReactTrixRTEInput(props) {
 
   useEffect(() => {
     if (trixRTEInputRef && trixRTEInputRef.current) {
-      trixRTEInputRef.current.addEventListener("trix-change", handleChange);
-      if (onFocus) trixRTEInputRef.current.addEventListener("trix-focus", onFocus);
-      if (onBlur) trixRTEInputRef.current.addEventListener("trix-blur", onBlur);
-      if (onInitialize) trixRTEInputRef.current.addEventListener("trix-initialize", onInitialize);
-      if (onFileAccepted) trixRTEInputRef.current.addEventListener("trix-file-accept", onFileAccepted);
-      if (onAttachmentAdd) trixRTEInputRef.current.addEventListener("trix-attachment-add", onAttachmentAdd);
-      if (onAttachmentRemove) trixRTEInputRef.current.addEventListener("trix-attachment-remove", onAttachmentAdd);
-      if (onSelectionChange) trixRTEInputRef.current.addEventListener("trix-selection-change", onSelectionChange);
-      if (onBeforeInitialize) trixRTEInputRef.current.addEventListener("trix-before-initialize", onBeforeInitialize);
+      const { addEventListener } = trixRTEInputRef.current;
+      addEventListener("trix-change", handleChange);
+      if (onFocus) addEventListener("trix-focus", onFocus);
+      if (onBlur) addEventListener("trix-blur", onBlur);
+      if (onInitialize) addEventListener("trix-initialize", onInitialize);
+      if (onFileAccepted) addEventListener("trix-file-accept", onFileAccepted);
+      if (onAttachmentAdd) addEventListener("trix-attachment-add", onAttachmentAdd);
+      if (onAttachmentRemove) addEventListener("trix-attachment-remove", onAttachmentRemove);
+      if (onSelectionChange) addEventListener("trix-selection-change", onSelectionChange);
+      if (onBeforeInitialize) addEventListener("trix-before-initialize", onBeforeInitialize);
     }
 
     return () => {
       if (trixRTEInputRef && trixRTEInputRef.current) {
-        trixRTEInputRef.current.removeEventListener("trix-change", handleChange);
-        if (onFocus) trixRTEInputRef.current.removeEventListener("trix-focus", onFocus);
-        if (onBlur) trixRTEInputRef.current.removeEventListener("trix-blur", onBlur);
-        if (onInitialize) trixRTEInputRef.current.removeEventListener("trix-initialize", onInitialize);
-        if (onFileAccepted) trixRTEInputRef.current.removeEventListener("trix-file-accept", onFileAccepted);
-        if (onAttachmentAdd) trixRTEInputRef.current.removeEventListener("trix-attachment-add", onAttachmentAdd);
-        if (onSelectionChange) trixRTEInputRef.current.removeEventListener("trix-selection-change", onSelectionChange);
-        if (onAttachmentRemove) trixRTEInputRef.current.removeEventListener("trix-attachment-remove", onAttachmentAdd);
-        if (onBeforeInitialize) trixRTEInputRef.current.removeEventListener("trix-before-initialize", onBeforeInitialize);
+        const { removeEventListener } = trixRTEInputRef.current;
+        removeEventListener("trix-change", handleChange);
+        if (onFocus) removeEventListener("trix-focus", onFocus);
+        if (onBlur) removeEventListener("trix-blur", onBlur);
+        if (onInitialize) removeEventListener("trix-initialize", onInitialize);
+        if (onFileAccepted) removeEventListener("trix-file-accept", onFileAccepted);
+        if (onAttachmentAdd) removeEventListener("trix-attachment-add", onAttachmentAdd);
+        if (onSelectionChange) removeEventListener("trix-selection-change", onSelectionChange);
+        if (onAttachmentRemove) removeEventListener("trix-attachment-remove", onAttachmentRemove);
+        if (onBeforeInitialize) removeEventListener("trix-before-initialize", onBeforeInitialize);
       }
     };
   }, [])
@@ -73,7 +75,7 @@ function ReactTrixRTEInput(props) {
   }
 
   return (
-    <Fragment>
+    <>
       <input
         id={trixRTEInputId}
         value={value}
@@ -88,9 +90,14 @@ function ReactTrixRTEInput(props) {
         {...directUploadOptions}
         {...trixEditorOptions}
       />
-    </Fragment>
+    </>
   );
 }
+
+ReactTrixRTEInput.defaultProps = {
+  isRailsDirectUpload: false,
+  defaultValue: '',
+};
 
 ReactTrixRTEInput.propTypes = {
   id: PropTypes.string,
