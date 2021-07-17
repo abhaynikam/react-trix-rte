@@ -89,14 +89,13 @@ export const WithCustomClassName = () => (
   <ReactTrixRTEInput className="tx-rte-with-border" defaultValue="<p>Too apply some styling via the className see the <strong>CSS Resources</strong> Tab of this story</p>" />
 );
 
-WithCustomClassName.story = {
-  parameters: {
-    cssresources: [{
-      id: "Blue Border",
-      class: "tx-rte-with-border",
-      code: `<style>.tx-rte-with-border { border: 2px solid blue; }</style>`,
-      picked: false
-    }]
-  },
-  decorators: [withCssResources]
+WithCustomClassName.parameters = {
+  cssresources: [{
+    id: "Blue Border",
+    class: "tx-rte-with-border",
+    code: `<style>.tx-rte-with-border { border: 2px solid blue; }</style>`,
+    picked: false
+  }]
 }
+
+WithCustomClassName.decorators = [withCssResources]
