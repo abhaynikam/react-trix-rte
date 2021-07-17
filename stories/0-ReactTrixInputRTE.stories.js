@@ -1,6 +1,6 @@
 import Trix from 'trix';
 import React, { useRef } from 'react';
-import { action, withActions } from '@storybook/addon-actions';
+import { action }  from '@storybook/addon-actions';
 import { withCssResources } from '@storybook/addon-cssresources';
 import { ReactTrixRTEInput } from '../index';
 
