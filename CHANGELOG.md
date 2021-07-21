@@ -1,6 +1,9 @@
 # Change log
 
 ## master (unreleased)
+
+## 1.0.14 (21-July-2021)
+* Fixes onAttachmentRemove trix event listener. Fixes #36. ([@radhenazarkar][])
 * Enable `className` prop in `ReactTrixRTEInput`. Refer: [#30](/issues/30). ([@alejo4373][])
 
 ## 1.0.13 (29-March-2021)
@@ -43,3 +46,4 @@
 [@CUnknown]: https://github.com/CUnknown
 [@Axxxx0n]: https://github.com/Axxxx0n
 [@alejo4373]: https://github.com/alejo4373
+[@radhenazarkar]: https://github.com/radhenazarkar
