@@ -8,6 +8,7 @@ export const groupBy = (collection, prop) => {
 }
 
 export const getUniqInputId = (prefix = 'react-trix-rte-input-') => {
-  const uniqueDateTimestamp = new Date().getTime();
-  return `${prefix}${uniqueDateTimestamp}`
+  const dateTimestamp = new Date().getTime();
+  const randomSalt = Math.random().toFixed(9).slice(2)
+  return `${prefix}${dateTimestamp}-${randomSalt}`
 }
