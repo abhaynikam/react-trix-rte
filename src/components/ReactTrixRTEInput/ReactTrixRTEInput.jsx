@@ -23,14 +23,16 @@ function ReactTrixRTEInput(props) {
     placeholder,
     autofocus,
     className,
+    railsDirectUploadUrl,
+    railsBlobUrlTemplate
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
   const trixRTEInputId = props.id || getUniqInputId();
   const trixRTEInputName = props.name || "content";
   const directUploadOptions = isRailsDirectUpload ? {
-    "data-direct-upload-url": RAILS_DIRECT_UPLOADS_URL,
-    "data-blob-url-template": RAILS_SERVICE_BLOB_URL
+    "data-direct-upload-url": railsDirectUploadUrl || RAILS_DIRECT_UPLOADS_URL,
+    "data-blob-url-template": railsBlobUrlTemplate || RAILS_SERVICE_BLOB_URL
   } : {};
   let trixEditorOptions = {}
   if (autofocus) trixEditorOptions["autofocus"] = true;
@@ -118,6 +120,8 @@ ReactTrixRTEInput.propTypes = {
   placeholder: PropTypes.string,
   autofocus: PropTypes.bool,
   className: PropTypes.string,
+  railsDirectUploadUrl: PropTypes.string,
+  railsBlobUrlTemplate: PropTypes.string
 };
 
 export default ReactTrixRTEInput;

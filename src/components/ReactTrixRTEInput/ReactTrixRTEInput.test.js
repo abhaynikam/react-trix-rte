@@ -25,6 +25,12 @@ describe('ReactTrixRTEInput', () => {
     expect(wrapper.find('trix-editor').props()['data-blob-url-template']).toEqual(RAILS_SERVICE_BLOB_URL);
   });
 
+  it('renders with custom rails direct upload URL', () => {
+    const wrapper = shallow(<ReactTrixRTEInput isRailsDirectUpload railsDirectUploadUrl="A" railsBlobUrlTemplate="B" />);
+    expect(wrapper.find('trix-editor').props()['data-direct-upload-url']).toEqual("A");
+    expect(wrapper.find('trix-editor').props()['data-blob-url-template']).toEqual("B");
+  });
+
   it('renders with placeholder', () => {
     const wrapper = shallow(<ReactTrixRTEInput placeholder="Enter the description" />);
     expect(wrapper.find('trix-editor').props().placeholder).toEqual("Enter the description");
