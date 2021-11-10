@@ -63,6 +63,8 @@ Import `import Trix from "trix";` to the component using React Trix RTE.
 | name                | string   | The HTML name attribute for the input field
 | toolbarId           | string   | If a custom toolbar is used for the Trix Input, pass the `toolbarId` of the custom toolbar to the input. |
 | isRailsDirectUpload | boolean | React Trix editor support direct uploading of the files to the service if you are using Rails as a backend server. This defaults to `false` |
+| railsDirectUploadUrl| string | Custom URL for Rails direct upload (`data-direct-upload-url`) |
+| railsBlobUrl        | string | Custom URL for Rails blob template (`data-blob-url-template`) |
 | placeholder         | string | Adds a placeholder to the React Trix Input |
 | defaultValue        | string | The default value of the React Trix Input |
 | autofocus           | boolean | Autofocus in the trix input. This is defaults to `false` |
