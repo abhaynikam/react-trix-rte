@@ -32,7 +32,7 @@ function ReactTrixRTEInput(props) {
   const trixRTEInputName = props.name || "content";
   const directUploadOptions = isRailsDirectUpload ? {
     "data-direct-upload-url": railsDirectUploadUrl || RAILS_DIRECT_UPLOADS_URL,
-    "data-blob-url-template": railsBlobUrlTemplate || RAILS_SERVICE_BLOB_URL
+    "data-blob-url-template": railsBlobUrl || RAILS_SERVICE_BLOB_URL
   } : {};
   let trixEditorOptions = {}
   if (autofocus) trixEditorOptions["autofocus"] = true;
