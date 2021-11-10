@@ -24,7 +24,7 @@ function ReactTrixRTEInput(props) {
     autofocus,
     className,
     railsDirectUploadUrl,
-    railsBlobUrlTemplate
+    railsBlobUrl
   } = props;
   const trixRTEInputRef = trixInputRef ? trixInputRef : useRef();
   const [value, setValue] = useState(defaultValue);
@@ -121,7 +121,7 @@ ReactTrixRTEInput.propTypes = {
   autofocus: PropTypes.bool,
   className: PropTypes.string,
   railsDirectUploadUrl: PropTypes.string,
-  railsBlobUrlTemplate: PropTypes.string
+  railsBlobUrl: PropTypes.string
 };
 
 export default ReactTrixRTEInput;

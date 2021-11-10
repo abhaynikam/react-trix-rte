@@ -26,7 +26,7 @@ describe('ReactTrixRTEInput', () => {
   });
 
   it('renders with custom rails direct upload URL', () => {
-    const wrapper = shallow(<ReactTrixRTEInput isRailsDirectUpload railsDirectUploadUrl="A" railsBlobUrlTemplate="B" />);
+    const wrapper = shallow(<ReactTrixRTEInput isRailsDirectUpload railsDirectUploadUrl="A" railsBlobUrl="B" />);
     expect(wrapper.find('trix-editor').props()['data-direct-upload-url']).toEqual("A");
     expect(wrapper.find('trix-editor').props()['data-blob-url-template']).toEqual("B");
   });
