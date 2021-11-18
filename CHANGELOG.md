@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+
+## 1.0.15 (18-Nov-2021)
 * Enable custom URL for Rails direct upload with `railsDirectUploadUrl` and `railsBlobUrl` prop in `ReactTrixRTEInput`. Refer: [#43](/issues/43). ([@mech][])
 * Fixes conflicting Trix editor id ([@rjclaasen ][])
 
