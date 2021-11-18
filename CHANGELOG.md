@@ -3,6 +3,7 @@
 ## master (unreleased)
 
 * Enable custom URL for Rails direct upload with `railsDirectUploadUrl` and `railsBlobUrl` prop in `ReactTrixRTEInput`. Refer: [#43](/issues/43). ([@mech][])
+* Fixes conflicting Trix editor id ([@rjclaasen ][])
 
 ## 1.0.14 (21-July-2021)
 * Fixes onAttachmentRemove trix event listener. Fixes #36. ([@radhenazarkar][])
@@ -49,3 +50,5 @@
 [@Axxxx0n]: https://github.com/Axxxx0n
 [@alejo4373]: https://github.com/alejo4373
 [@radhenazarkar]: https://github.com/radhenazarkar
+[@mech]: https://github.com/mech
+[@rjclaasen]: https://github.com/rjclaasen
