@@ -40,30 +40,28 @@ function ReactTrixRTEInput(props) {
 
   useEffect(() => {
     if (trixRTEInputRef && trixRTEInputRef.current) {
-      const { addEventListener } = trixRTEInputRef.current;
-      addEventListener("trix-change", handleChange);
-      if (onFocus) addEventListener("trix-focus", onFocus);
-      if (onBlur) addEventListener("trix-blur", onBlur);
-      if (onInitialize) addEventListener("trix-initialize", onInitialize);
-      if (onFileAccepted) addEventListener("trix-file-accept", onFileAccepted);
-      if (onAttachmentAdd) addEventListener("trix-attachment-add", onAttachmentAdd);
-      if (onAttachmentRemove) addEventListener("trix-attachment-remove", onAttachmentRemove);
-      if (onSelectionChange) addEventListener("trix-selection-change", onSelectionChange);
-      if (onBeforeInitialize) addEventListener("trix-before-initialize", onBeforeInitialize);
+      trixRTEInputRef.current.addEventListener("trix-change", handleChange);
+      if (onFocus) trixRTEInputRef.current.addEventListener("trix-focus", onFocus);
+      if (onBlur) trixRTEInputRef.current.addEventListener("trix-blur", onBlur);
+      if (onInitialize) trixRTEInputRef.current.addEventListener("trix-initialize", onInitialize);
+      if (onFileAccepted) trixRTEInputRef.current.addEventListener("trix-file-accept", onFileAccepted);
+      if (onAttachmentAdd) trixRTEInputRef.current.addEventListener("trix-attachment-add", onAttachmentAdd);
+      if (onAttachmentRemove) trixRTEInputRef.current.addEventListener("trix-attachment-remove", onAttachmentRemove);
+      if (onSelectionChange) trixRTEInputRef.current.addEventListener("trix-selection-change", onSelectionChange);
+      if (onBeforeInitialize) trixRTEInputRef.current.addEventListener("trix-before-initialize", onBeforeInitialize);
     }
 
     return () => {
       if (trixRTEInputRef && trixRTEInputRef.current) {
-        const { removeEventListener } = trixRTEInputRef.current;
-        removeEventListener("trix-change", handleChange);
-        if (onFocus) removeEventListener("trix-focus", onFocus);
-        if (onBlur) removeEventListener("trix-blur", onBlur);
-        if (onInitialize) removeEventListener("trix-initialize", onInitialize);
-        if (onFileAccepted) removeEventListener("trix-file-accept", onFileAccepted);
-        if (onAttachmentAdd) removeEventListener("trix-attachment-add", onAttachmentAdd);
-        if (onSelectionChange) removeEventListener("trix-selection-change", onSelectionChange);
-        if (onAttachmentRemove) removeEventListener("trix-attachment-remove", onAttachmentRemove);
-        if (onBeforeInitialize) removeEventListener("trix-before-initialize", onBeforeInitialize);
+        trixRTEInputRef.current.removeEventListener("trix-change", handleChange);
+        if (onFocus) trixRTEInputRef.current.removeEventListener("trix-focus", onFocus);
+        if (onBlur) trixRTEInputRef.current.removeEventListener("trix-blur", onBlur);
+        if (onInitialize) trixRTEInputRef.current.removeEventListener("trix-initialize", onInitialize);
+        if (onFileAccepted) trixRTEInputRef.current.removeEventListener("trix-file-accept", onFileAccepted);
+        if (onAttachmentAdd) trixRTEInputRef.current.removeEventListener("trix-attachment-add", onAttachmentAdd);
+        if (onSelectionChange) trixRTEInputRef.current.removeEventListener("trix-selection-change", onSelectionChange);
+        if (onAttachmentRemove) trixRTEInputRef.current.removeEventListener("trix-attachment-remove", onAttachmentRemove);
+        if (onBeforeInitialize) trixRTEInputRef.current.removeEventListener("trix-before-initialize", onBeforeInitialize);
       }
     };
   }, [])
