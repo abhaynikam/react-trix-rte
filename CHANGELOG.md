@@ -1,6 +1,8 @@
 # Change log
 
 ## master (unreleased)
+
+## 1.0.16 (14-Jan-2022)
 * Fixes multiple instances of Trix editor triggering same onChange event. Fixes #47. ([@abhaynikam][])
 
 ## 1.0.15 (18-Nov-2021)
